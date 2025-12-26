@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | Embedded Systems Engineer</title>
+    <title>{{ page.title }} | Electronics Engineer</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
-        /*
-         * Embedded Systems Portfolio - Layout Styles
-         * Minimalist, High-Performance, Modern Dark Mode
-         */
-        
         :root {
-            --bg-color: #1e1e1e;
-            --accent-color: #00ff41;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --border-color: #333333;
+            --bg-color: #0f0f11;
+            --surface-color: #1a1a1e;
+            --accent-color: #00e5ff; /* Cyber Blue */
+            --text-primary: #e0e0e0;
+            --text-secondary: #94a3b8;
+            --border-color: #2d2d33;
+            --nav-height: 70px;
         }
 
         * {
@@ -27,25 +28,26 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             line-height: 1.6;
-            padding-top: 80px; /* Offset for fixed header */
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Monospace Headers */
-        h1, h2, h3, h4, h5, h6, .mono {
-            font-family: 'Courier New', 'Roboto Mono', monospace;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-primary);
+        /* Typography */
+        h1, h2, h3, h4, .mono {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.02em;
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 1rem; border-left: 4px solid var(--accent-color); padding-left: 15px; }
+        h1 { font-size: 2.25rem; margin-bottom: 1.5rem; }
+        h2 { font-size: 1.5rem; margin: 2rem 0 1rem; color: var(--accent-color); }
 
         a {
             color: var(--accent-color);
             text-decoration: none;
-            transition: all 0.2s ease-in-out;
+            transition: opacity 0.2s;
         }
 
         a:hover {
@@ -54,49 +56,50 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 1.5rem;
         }
 
-        /* Fixed Navigation */
-        header {
-            background-color: rgba(30, 30, 30, 0.95);
-            border-bottom: 1px solid var(--border-color);
-            position: fixed;
+        /* Navigation */
+        nav {
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
             z-index: 1000;
-            height: 70px;
+            height: var(--nav-height);
+            background: rgba(15, 15, 17, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
             display: flex;
             align-items: center;
-            backdrop-filter: blur(5px);
         }
 
-        nav {
+        .nav-content {
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
         }
 
-        .nav-logo {
+        .nav-brand {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.1rem;
             font-weight: 700;
-            font-size: 1.2rem;
             color: var(--accent-color);
         }
 
         .nav-links {
-            list-style: none;
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
+            list-style: none;
         }
 
         .nav-links a {
-            font-weight: 600;
-            font-size: 0.9rem;
             color: var(--text-primary);
+            font-size: 0.9rem;
+            font-family: 'Roboto Mono', monospace;
+            text-transform: uppercase;
         }
 
         .nav-links a:hover {
@@ -104,67 +107,106 @@
             text-decoration: none;
         }
 
-        /* Main Content */
+        /* Content */
         main {
-            min-height: calc(100vh - 250px);
-            padding: 3rem 0;
+            padding-top: 3rem;
+            padding-bottom: 5rem;
+            min-height: calc(100vh - 200px);
+        }
+
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 229, 255, 0.1);
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--accent-color);
+            font-size: 0.75rem;
+            font-family: 'Roboto Mono', monospace;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
         }
 
         /* Footer */
         footer {
+            padding: 4rem 0;
             border-top: 1px solid var(--border-color);
-            padding: 3rem 0;
             text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
         }
 
-        .social-icons {
-            margin-top: 1.5rem;
+        .footer-links {
+            margin-top: 1rem;
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
-        .social-icons a {
-            font-size: 1.2rem;
+        .footer-links a {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
         }
 
-        /* Code Blocks */
-        pre, code {
-            font-family: 'Courier New', 'Roboto Mono', monospace;
-            background-color: #252525;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 2rem;
         }
 
-        pre {
-            padding: 1rem;
-            overflow-x: auto;
-            border: 1px solid var(--border-color);
-            margin: 1.5rem 0;
-        }
-
-        /* Responsive */
+        /* Mobile Adjustments */
         @media (max-width: 600px) {
+            .nav-brand { font-size: 0.9rem; }
             .nav-links { gap: 1rem; }
-            h1 { font-size: 1.8rem; }
+            .nav-links a { font-size: 0.8rem; }
+            h1 { font-size: 1.75rem; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="nav-logo mono">&gt; SYS_ENG</div>
-                <ul class="nav-links mono">
-                    <li><a href="/">HOME</a></li>
-                    <li><a href="/projects">PROJECTS</a></li>
-                    <li><a href="/about">ABOUT</a></li>
-                </ul>
-            </nav>
+    <nav>
+        <div class="container nav-content">
+            <div class="nav-brand">./electronics_eng</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <main class="container">
         {{ content }}
@@ -172,12 +214,12 @@
 
     <footer>
         <div class="container">
-            <p>&copy; {{ site.time | date: '%Y' }} Embedded Systems Portfolio. Built with Jekyll.</p>
-            <div class="social-icons">
-                <a href="https://github.com/avishkavishwajith" target="_blank">GITHUB</a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank">LINKEDIN</a>
-                <a href="mailto:contact@yourdomain.com">EMAIL</a>
+            <div class="footer-links">
+                <a href="https://github.com/{{ site.github_username }}" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank">LinkedIn</a>
+                <a href="mailto:{{ site.email }}">Contact</a>
             </div>
+            <p class="copyright">&copy; {{ site.time | date: '%Y' }} — Built with Jekyll.</p>
         </div>
     </footer>
 </body>
