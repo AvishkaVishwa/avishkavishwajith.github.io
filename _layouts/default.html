@@ -3,191 +3,558 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="Avishka Vishwajith - Undergraduate in Instrumentation & Automation, specializing in Embedded Systems, PCB Design, and Power Electronics. ">
+    <meta name="author" content="Avishka Vishwajith">
+    <title>{{ page.title | default: "Avishka Vishwajith - Portfolio" }}</title>
     
-    <!-- Professional Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-dark: #0a0a0c;
-            --surface-dark: #141417;
-            --accent: #00ff41; /* User Request: Pure Neon Green */
-            --accent-glow: rgba(0, 255, 65, 0.15);
-            --text-main: #e2e8f0;
-            --text-muted: #94a3b8;
-            --border: #27272a;
-            --font-main: 'Space Grotesk', sans-serif;
-            --font-mono: 'IBM Plex Mono', monospace;
+            --bg-dark: #1e1e1e;
+            --bg-darker: #151515;
+            --neon-green: #00ff41;
+            --text-light: #e0e0e0;
+            --text-gray: #a0a0a0;
+            --card-bg: #252525;
+            --border-color: #333;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        
+        * {
+            margin: 0;
+            padding:  0;
+            box-sizing: border-box;
+        }
+
         body {
+            font-family: 'Space Grotesk', sans-serif;
             background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: var(--font-main);
+            color: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-
-        /* Modern Navigation Shell */
-        .header {
+        /* Navigation */
+        nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            background: rgba(10, 10, 12, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            height: 70px;
+            top: 0;
+            width: 100%;
+            background:  rgba(30, 30, 30, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index:  1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav . container {
+            max-width:  1200px;
+            margin: 0 auto;
             display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
-        .header .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-        
-        .logo-title { 
-            font-family: var(--font-mono); 
-            font-weight: 700; 
-            color: var(--accent); 
-            font-size: 1.2rem; 
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-        }
-
-        .nav-desktop ul { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-desktop a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-family: var(--font-mono);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            opacity: 0.7;
-        }
-        .nav-desktop a:hover { color: var(--accent); opacity: 1; text-shadow: 0 0 10px var(--accent-glow); }
-
-        .content-wrapper { padding: 140px 0 100px; min-height: 100vh; }
-
-        /* Typography */
-        h1, h2, h3, h4 { font-family: var(--font-mono); color: #fff; }
-        .section-title { font-size: 2.5rem; margin-bottom: 2rem; color: var(--accent); text-transform: lowercase; }
-        
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.9rem 2.2rem;
-            background: var(--accent);
-            color: #000;
-            text-decoration: none !important;
+        nav .logo {
+            font-size: 1.5rem;
             font-weight: 700;
-            border-radius: 4px;
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-            cursor: pointer;
+            color: var(--neon-green);
+            text-decoration: none;
+            letter-spacing: -1px;
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px var(--accent-glow); }
 
-        /* Project Cards */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
-        .project-card {
-            background: var(--surface-dark);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.4s ease;
+        nav ul {
+            list-style: none;
             display: flex;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a: hover {
+            color: var(--neon-green);
+        }
+
+        nav ul li a:: after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width:  0;
+            height: 2px;
+            background: var(--neon-green);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
             flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        . menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--neon-green);
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height:  100vh;
+            display:  flex;
+            align-items:  center;
+            justify-content:  center;
+            padding: 6rem 2rem 2rem;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
             position: relative;
             overflow: hidden;
         }
-        .project-card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .project-card::after {
-            content: ''; position: absolute; top: 0; right: 0; width: 40px; height: 40px;
-            background: linear-gradient(45deg, transparent 50%, var(--accent) 50%);
-            opacity: 0.1; transition: opacity 0.3s;
-        }
-        .project-card:hover::after { opacity: 0.3; }
 
-        .project-tech { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); margin-bottom: 1rem; display: block; letter-spacing: 1.5px; opacity: 0.8; }
-        .project-card h3 { font-size: 1.2rem; margin-bottom: 0.75rem; line-height: 1.3; }
-        .project-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1; }
-        .project-link { 
-            color: var(--accent); 
-            text-decoration: none; 
-            font-size: 0.8rem; 
-            font-family: var(--font-mono); 
-            display: flex; 
-            align-items: center; 
-            gap: 0.5rem;
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width:  100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+            animation:  pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        . hero-content {
+            max-width: 1200px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
             font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--neon-green) 0%, #00cc33 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        /* Skills */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
-        .skill-item { 
-            background: var(--surface-dark); 
-            padding: 1.5rem; 
-            border: 1px solid var(--border); 
-            border-radius: 8px; 
-            display: flex; 
-            align-items: center; 
-            gap: 1.5rem;
+        .hero-content . subtitle {
+            font-size:  1.5rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            font-weight: 400;
         }
-        .skill-icon { color: var(--accent); font-size: 1.5rem; }
+
+        .hero-content . bio {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display:  inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--neon-green);
+            color: var(--bg-dark);
+            text-decoration:  none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow:  0 0 30px rgba(0, 255, 65, 0.5);
+        }
+
+        /* Skills Section */
+        #skills {
+            padding: 5rem 2rem;
+            background: var(--bg-dark);
+        }
+
+        . section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--neon-green);
+        }
+
+        .skills-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition:  all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-green);
+            box-shadow: 0 5px 20px rgba(0, 255, 65, 0.2);
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom:  0.5rem;
+            color: var(--neon-green);
+        }
+
+        .skill-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            padding: 5rem 2rem;
+            background: var(--bg-darker);
+        }
+
+        .portfolio-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow:  0 10px 30px rgba(0, 255, 65, 0.2);
+            border-color: var(--neon-green);
+        }
+
+        .project-card . project-image {
+            width:  100%;
+            height: 200px;
+            background: linear-gradient(135deg, #252525 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--neon-green);
+            opacity: 0.5;
+        }
+
+        .project-card . project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom:  0.8rem;
+            color: var(--neon-green);
+        }
+
+        .project-card p {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .project-card . tech-stack {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            background: rgba(0, 255, 65, 0.1);
+            border-radius: 5px;
+        }
+
+        . project-card a {
+            color: var(--neon-green);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content Section (for blog posts) */
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+            min-height: 100vh;
+        }
+
+        .content-wrapper h1 {
+            color: var(--neon-green);
+            margin-bottom: 1rem;
+        }
+
+        .content-wrapper h2 {
+            color: var(--neon-green);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-wrapper h3 {
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .content-wrapper p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .content-wrapper a {
+            color: var(--neon-green);
+            text-decoration: underline;
+        }
+
+        .content-wrapper code {
+            background: var(--card-bg);
+            padding: 0.2rem 0.5rem;
+            border-radius:  3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        . content-wrapper pre {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x:  auto;
+            margin-bottom: 1rem;
+        }
 
         /* Footer */
-        .footer { padding: 80px 0 40px; border-top: 1px solid var(--border); text-align: center; }
-        .social-links { display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2rem; }
-        .social-links a { color: var(--text-muted); font-size: 1.5rem; transition: all 0.3s; }
-        .social-links a:hover { color: var(--accent); transform: scale(1.1); }
-        .footer p { color: var(--text-muted); font-size: 0.75rem; font-family: var(--font-mono); opacity: 0.6; }
+        footer {
+            background: var(--bg-darker);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
 
+        footer p {
+            color: var(--text-gray);
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav-desktop { display: none; }
-            .section-title { font-size: 2rem; }
-            .content-wrapper { padding-top: 100px; }
-            .portfolio-grid { grid-template-columns: 1fr; }
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left:  0;
+                width: 100%;
+                background: var(--bg-darker);
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 1rem 2rem;
+            }
+
+            . hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="header">
+    <!-- Navigation -->
+    <nav>
         <div class="container">
-            <a href="{{ '/' | relative_url }}" style="text-decoration: none;">
-                <span class="logo-title">AVIS<span style="color: #fff">HKA</span>.SYS</span>
-            </a>
-            <nav class="nav-desktop">
-                <ul>
-                    <li><a href="{{ '/' | relative_url }}">Main</a></li>
-                    <li><a href="{{ '/about/' | relative_url }}">Bio</a></li>
-                    <li><a href="{{ '/projects/' | relative_url }}">Portfolio</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="container content-wrapper">
-        {{ content }}
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://github.com/{{ site.github_username }}" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:{{ site.email }}" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="/" class="logo">AV</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <p>&copy; {{ site.time | date: '%Y' }} Avishka Vishwajith // Instrumentation & Automation Technology // UoC</p>
+            <ul id="nav-menu">
+                <li><a href="/#hero">Home</a></li>
+                <li><a href="/#skills">Skills</a></li>
+                <li><a href="/#portfolio">Portfolio</a></li>
+            </ul>
         </div>
+    </nav>
+
+    {% if page.url == "/" %}
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Avishka Vishwajith</h1>
+            <p class="subtitle">Undergraduate in Instrumentation & Automation</p>
+            <p class="bio">I am a Level 4 Undergraduate student reading for the Bachelor of Engineering Technology Honours in Instrumentation and Automation. I specialize in Embedded Systems, PCB Design, and Power Electronics.</p>
+            <a href="/#portfolio" class="cta-button">View My Work</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>ESP32 (IDF)</h3>
+                <p>Embedded development with ESP-IDF framework</p>
+            </div>
+            <div class="skill-card">
+                <h3>STM32 (CubeIDE)</h3>
+                <p>ARM Cortex-M microcontroller programming</p>
+            </div>
+            <div class="skill-card">
+                <h3>KiCad</h3>
+                <p>PCB design and schematic capture</p>
+            </div>
+            <div class="skill-card">
+                <h3>Altium</h3>
+                <p>Professional PCB design software</p>
+            </div>
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Automation and data processing</p>
+            </div>
+            <div class="skill-card">
+                <h3>C/C++</h3>
+                <p>Embedded systems programming</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="portfolio-grid">
+            <div class="project-card">
+                <div class="project-image">🤖</div>
+                <div class="project-content">
+                    <h3>RoboCore 2.0</h3>
+                    <p>A custom self-balancing robot controller featuring advanced motion control and sensor fusion algorithms. </p>
+                    <div class="tech-stack"><strong>Tech:</strong> ESP32-S3, TB6612FNG, MPU6050</div>
+                    <a href="/2025/12/26/robocore-intro.html">Read More →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">💡</div>
+                <div class="project-content">
+                    <h3>Wireless Grow Light</h3>
+                    <p>Automated plant illumination system with remote actuator control for optimal plant growth conditions.</p>
+                    <div class="tech-stack"><strong>Tech:</strong> IoT, Power Electronics</div>
+                    <a href="#">Read More →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">🔌</div>
+                <div class="project-content">
+                    <h3>Custom Breakout Boards</h3>
+                    <p>USB-to-TTL and ESP32 Breakout boards designed for development and prototyping workflows.</p>
+                    <div class="tech-stack"><strong>Tech:</strong> KiCad, PCB Design</div>
+                    <a href="#">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% else %}
+    <!-- Content Section (for blog posts and other pages) -->
+    <div class="content-wrapper">
+        {{ content }}
+    </div>
+    {% endif %}
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Avishka Vishwajith. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const hash = this.getAttribute('href').substring(2);
+                if (hash && document.getElementById(hash)) {
+                    e.preventDefault();
+                    const target = document.getElementById(hash);
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
