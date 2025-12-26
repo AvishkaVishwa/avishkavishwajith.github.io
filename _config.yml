@@ -1,0 +1,14 @@
+title: Avishka Vishwajith
+description: Electronics | Embedded Systems | PCB Design 
+theme: jekyll-theme-minimal
+show_downloads: true
+logo: # We can add a logo url here later
+
+# This creates your Top Navigation Menu
+header_pages:
+  - index.md
+  - projects.md
+  - about.md
+
+# This is for SEO (Google Search)
+url: "https://[yourusername].github.io"
