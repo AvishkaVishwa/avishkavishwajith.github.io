@@ -216,11 +216,11 @@ li {
 
 #home {
   background-image:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.62)),
-    url("../img/circuit-bg.svg");
-  background-size: cover, 360px 360px;
-  background-position: center, center;
-  background-repeat: no-repeat, repeat;
+    linear-gradient(120deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.68)),
+    url("../img/back.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero::before {
@@ -828,10 +828,6 @@ li {
 @media (max-width: 640px) {
   .hero {
     padding-top: 70px;
-  }
-
-  #home {
-    background-size: cover, 280px 280px;
   }
 
   .actions {
