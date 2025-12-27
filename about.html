@@ -1,31 +1,28 @@
-<!-- =========================
-FILE: about.html
-========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Electro-man | About</title>
-  <meta name="description" content="About Avishka Vishwajith — Instrumentation & Automation Technology undergraduate focused on embedded systems, IoT and PCB design." />
+  <title>Avishka Vishwajith | About</title>
+  <meta name="description" content="About Avishka Vishwajith, an instrumentation and automation technology undergraduate focused on embedded systems, IoT, and PCB design." />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
 <header class="header">
   <div class="container navbar">
-    <a class="brand" href="index.html"><span class="dot"></span> Electro-man</a>
+    <a class="brand" href="index.html"><span class="dot"></span> Avishka Vishwajith</a>
 
     <nav class="menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
+      <a href="services.html">Skills</a>
+      <a href="projects.html">Portfolio</a>
       <a href="blogs/index.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
 
-    <button class="hamburger" aria-label="Open menu">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -34,70 +31,57 @@ FILE: about.html
     <div class="container">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
+      <a href="services.html">Skills</a>
+      <a href="projects.html">Portfolio</a>
       <a href="blogs/index.html">Blog</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
 </header>
 
-<main class="container">
-  <section class="hero">
-    <div class="badge">About</div>
-    <h1>Who I am</h1>
-    <p>
-      I’m Avishka Vishwajith — an undergraduate in Instrumentation & Automation Technology.
-      I build embedded systems and electronics projects, focusing on practical engineering.
-    </p>
-
-    <div class="tagrow">
-      <span class="tag">Embedded Systems</span>
-      <span class="tag">PCB Design</span>
-      <span class="tag">IoT</span>
-      <span class="tag">Robotics</span>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Core Skills</h2>
-    <p class="lead">
-      I enjoy bridging hardware + software: from sensors and motor drivers to dashboards and control logic.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Embedded Firmware</h3>
-        <p>ESP32 (ESP-IDF), STM32, drivers (I2C/SPI/UART), control algorithms, system integration.</p>
-      </div>
-      <div class="card">
-        <h3>PCB Design</h3>
-        <p>KiCad schematic/layout, power design basics, footprint checks, manufacturing outputs.</p>
-      </div>
-      <div class="card">
-        <h3>IoT & Monitoring</h3>
-        <p>MQTT pipelines, Grafana dashboards, data logging, alerts and web interfaces.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>My Goal</h2>
-    <div class="card">
-      <p>
-        My goal is to build reliable and useful systems — from small prototypes to real-world automation.
-        I’m continuously learning and improving through projects and experiments.
+<main>
+  <section class="hero section-scroll-animate">
+    <div class="container">
+      <div class="badge animate-fade-in-up">About</div>
+      <h1 class="animate-fade-in-up delay-1">About Me</h1>
+      <p class="hero-desc animate-fade-in-up delay-2">
+        Undergraduate in Instrumentation and Automation Technology with a focus on embedded systems, IoT, and circuit design.
       </p>
+    </div>
+  </section>
+
+  <section class="section section-scroll-animate">
+    <div class="container">
+      <div class="about-grid">
+        <div class="card animate-fade-in-up delay-1">
+          <p>
+            I am pursuing a degree in <strong>Instrumentation and Automation Technology</strong>, building a solid
+            foundation in industrial control, electronics, and real-time data acquisition. I am actively developing my
+            skill set in embedded software and hardware design to bridge the gap between digital logic and physical
+            application.
+          </p>
+        </div>
+        <div class="card animate-fade-in-up delay-2">
+          <p>
+            My goal is to leverage technology to solve meaningful problems. I am dedicated to continuous learning in the
+            rapidly evolving fields of IoT and automation, aiming to contribute to efficient and innovative engineering
+            projects.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="container small">
-    © <span id="year"></span> Electro-man •
-    <a href="mailto:jayawardenago@gmail.com">jayawardenago@gmail.com</a> •
-    <a href="https://github.com/AvishkaVishwa" target="_blank" rel="noopener">GitHub</a> •
-    <a href="http://www.linkedin.com/in/avishka-vishwajith1127" target="_blank" rel="noopener">LinkedIn</a>
+  <div class="container">
+    <div class="social-links">
+      <a href="https://github.com/AvishkaVishwa" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/avishka-vishwajith1127" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:jayawardenago@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="small">&copy; <span id="year"></span> Avishka Vishwajith. All rights reserved.</p>
+    <div class="footer-info">Designed with care for embedded and automation projects.</div>
   </div>
 </footer>
 

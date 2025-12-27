@@ -1,31 +1,28 @@
-<!-- =========================
-FILE: projects.html
-========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Electro-man | Projects</title>
-  <meta name="description" content="Projects by Electro-man: embedded systems, PCB designs, IoT dashboards, and robotics builds." />
+  <title>Avishka Vishwajith | Portfolio</title>
+  <meta name="description" content="Portfolio of embedded systems, IoT, and PCB design projects by Avishka Vishwajith." />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
 <header class="header">
   <div class="container navbar">
-    <a class="brand" href="index.html"><span class="dot"></span> Electro-man</a>
+    <a class="brand" href="index.html"><span class="dot"></span> Avishka Vishwajith</a>
 
     <nav class="menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
+      <a href="services.html">Skills</a>
+      <a href="projects.html">Portfolio</a>
       <a href="blogs/index.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
 
-    <button class="hamburger" aria-label="Open menu">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -34,76 +31,149 @@ FILE: projects.html
     <div class="container">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
+      <a href="services.html">Skills</a>
+      <a href="projects.html">Portfolio</a>
       <a href="blogs/index.html">Blog</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
 </header>
 
-<main class="container">
-  <section class="hero">
-    <div class="badge">Projects</div>
-    <h1>Selected work</h1>
-    <p>Some of my embedded systems, PCB, IoT, and robotics projects.</p>
+<main>
+  <section class="hero section-scroll-animate">
+    <div class="container">
+      <div class="badge animate-fade-in-up">Portfolio</div>
+      <h1 class="animate-fade-in-up delay-1">Selected Projects</h1>
+      <p class="hero-desc animate-fade-in-up delay-2">
+        A snapshot of embedded systems, IoT monitoring, and PCB development work.
+      </p>
+    </div>
   </section>
 
-  <section class="section">
-    <h2>Featured Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>ESP32 Smart Clock</h3>
-        <p>Web-configurable alarms/timers + SNTP sync + MAX7219 display + custom PCB power chain.</p>
-        <div class="tagrow"><span class="tag">ESP-IDF</span><span class="tag">KiCad</span><span class="tag">MAX7219</span></div>
-        <p class="small" style="margin-top:10px;">
-          <a href="https://github.com/AvishkaVishwa/Smart_Clock" target="_blank" rel="noopener">GitHub →</a>
-        </p>
-      </div>
+  <section class="section section-scroll-animate">
+    <div class="container">
+      <div class="portfolio-grid">
+        <article class="project-card animate-fade-in-up delay-1">
+          <div class="project-media">
+            <img src="assets/img/projects/greenhouse-monitoring.svg" alt="Greenhouse Monitoring System" />
+          </div>
+          <div class="project-content">
+            <h3>Greenhouse Monitoring System</h3>
+            <p>Real-time sensing and control via Blynk; ESP8266 with soil moisture, MQ-135, DHT11, LDR.</p>
+            <p class="project-stack">Tech: ESP8266, Blynk, IoT</p>
+            <a href="https://github.com/AvishkaVishwa/Green-House-Monitoring-System" target="_blank" rel="noopener noreferrer" class="project-link">Repo <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
 
-      <div class="card">
-        <h3>Sumo Robot (Competition)</h3>
-        <p>Autonomous pushing robot using ESP32 + TB6612FNG motor driver.</p>
-        <div class="tagrow"><span class="tag">Robotics</span><span class="tag">Motor Control</span><span class="tag">ESP32</span></div>
-        <p class="small" style="margin-top:10px;">
-          <a href="https://github.com/AvishkaVishwa/Robot-Competetion-Sumo-Robot-method" target="_blank" rel="noopener">GitHub →</a>
-        </p>
-      </div>
+        <article class="project-card animate-fade-in-up delay-2">
+          <div class="project-media">
+            <img src="assets/img/projects/temperature-monitoring.svg" alt="Temperature Monitoring System" />
+          </div>
+          <div class="project-content">
+            <h3>Temperature Monitoring System</h3>
+            <p>AVR-based design with interrupts and a 4-digit 7-segment UI.</p>
+            <p class="project-stack">Tech: ATmega328P, AVR C, 7-segment</p>
+            <a href="https://github.com/AvishkaVishwa/Microcontroller-Design-Project-Temperature-Monitoring-System" target="_blank" rel="noopener noreferrer" class="project-link">Repo <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
 
-      <div class="card">
-        <h3>Greenhouse Monitoring</h3>
-        <p>ESP8266 + sensors + Blynk monitoring for greenhouse environment.</p>
-        <div class="tagrow"><span class="tag">IoT</span><span class="tag">Sensors</span><span class="tag">ESP8266</span></div>
-        <p class="small" style="margin-top:10px;">
-          <a href="https://github.com/AvishkaVishwa/Green-House-Monitoring-System" target="_blank" rel="noopener">GitHub →</a>
-        </p>
-      </div>
+        <article class="project-card animate-fade-in-up delay-3">
+          <div class="project-media">
+            <img src="assets/img/projects/step-counter.svg" alt="Step Counter with Fall Detection" />
+          </div>
+          <div class="project-content">
+            <h3>Step Counter with Fall Detection</h3>
+            <p>Wearable IMU processing and OLED status display.</p>
+            <p class="project-stack">Tech: ESP32 (ESP-IDF), MPU6050, OLED</p>
+            <a href="https://github.com/AvishkaVishwa/ESP32-MPU6050-Step-Counter-Fall-Detection-System" target="_blank" rel="noopener noreferrer" class="project-link">Repo <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
 
-      <div class="card">
-        <h3>12V DC Motor Speed Controller PCB</h3>
-        <p>NE555 PWM speed control circuit with custom PCB layout.</p>
-        <div class="tagrow"><span class="tag">NE555</span><span class="tag">PCB</span><span class="tag">Power</span></div>
-      </div>
+        <article class="project-card animate-fade-in-up delay-4">
+          <div class="project-media">
+            <img src="assets/img/projects/speed-controller.svg" alt="12V DC Motor Speed Controller" />
+          </div>
+          <div class="project-content">
+            <h3>12V DC Motor Speed Controller (PCB)</h3>
+            <p>NE555 astable PWM drive; custom KiCad layout.</p>
+            <p class="project-stack">Tech: NE555, PWM, KiCad</p>
+            <a href="https://github.com/AvishkaVishwa/12V-DC-Motor-Speed-Controller-PCB-Design-using-KiCAD.git" target="_blank" rel="noopener noreferrer" class="project-link">Repo <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
 
-      <div class="card">
-        <h3>Data Acquisition System</h3>
-        <p>DAQ with multiple sensors and visualization workflow.</p>
-        <div class="tagrow"><span class="tag">Sensors</span><span class="tag">DAQ</span><span class="tag">Visualization</span></div>
-      </div>
+        <article class="project-card animate-fade-in-up delay-5">
+          <div class="project-media">
+            <img src="assets/img/projects/ac-dc-converter.svg" alt="12V AC to DC Converter" />
+          </div>
+          <div class="project-content">
+            <h3>12V AC to DC Converter (PCB)</h3>
+            <p>Step-down transformer, bridge rectifier, LC filter, linear regulation.</p>
+            <p class="project-stack">Tech: Power electronics, KiCad</p>
+            <a href="https://github.com/AvishkaVishwa/12V-AC-to-DC-Converter-PCB-design-using-KiCAD" target="_blank" rel="noopener noreferrer" class="project-link">Repo <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
 
-      <div class="card">
-        <h3>ESP32 Automation Board</h3>
-        <p>Industrial-style controller with opto inputs and SSR outputs.</p>
-        <div class="tagrow"><span class="tag">IIoT</span><span class="tag">Isolation</span><span class="tag">ESP32</span></div>
+        <article class="project-card animate-fade-in-up delay-6">
+          <div class="project-media">
+            <img src="assets/img/projects/data-acquisition.svg" alt="Data Acquisition System" />
+          </div>
+          <div class="project-content">
+            <h3>Data Acquisition System</h3>
+            <p>Three-sensor DAQ with LabVIEW visualization (MPU6050, DS18B20, mic).</p>
+            <p class="project-stack">Tech: ATmega328P, LabVIEW</p>
+            <a href="https://github.com/AvishkaVishwa/Data-acquisition-System" target="_blank" rel="noopener noreferrer" class="project-link">Repo <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card animate-fade-in-up delay-7">
+          <div class="project-media">
+            <img src="assets/img/projects/sumo-robot.svg" alt="Sumo Robot Competition" />
+          </div>
+          <div class="project-content">
+            <h3>Sumo Robot (Competition)</h3>
+            <p>Autonomous object detection and pushing; ESP32 + TB6612FNG; 1st runners-up at UoC FOT 2024.</p>
+            <p class="project-stack">Tech: ESP-IDF, motor control, TB6612FNG</p>
+            <a href="https://github.com/AvishkaVishwa/Robot-Competetion-Sumo-Robot-method" target="_blank" rel="noopener noreferrer" class="project-link">Repo <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card animate-fade-in-up delay-8">
+          <div class="project-media">
+            <img src="assets/img/projects/smart-clock.svg" alt="ESP32 Smart Clock" />
+          </div>
+          <div class="project-content">
+            <h3>ESP32 Powered Smart Clock</h3>
+            <p>Web-configurable alarms and timers, SNTP sync; custom 2-layer PCB (LM2596S + AMS1117, MAX7219 4-digit).</p>
+            <p class="project-stack">Tech: ESP32-WROOM-32, ESP-IDF, KiCad</p>
+            <a href="https://github.com/AvishkaVishwa/Smart_Clock" target="_blank" rel="noopener noreferrer" class="project-link">Repo <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card animate-fade-in-up delay-9">
+          <div class="project-media">
+            <img src="assets/img/projects/automation-board.svg" alt="ESP32 Automation Board" />
+          </div>
+          <div class="project-content">
+            <h3>ESP32 Automation Board - Industrial IoT Controller</h3>
+            <p>5 opto-isolated inputs, 4 SSR outputs, onboard buck, galvanic isolation.</p>
+            <p class="project-stack">Tech: ESP32-WROOM-32, KiCad, IIoT</p>
+            <a href="https://github.com/AvishkaVishwa/Auto_Board" target="_blank" rel="noopener noreferrer" class="project-link">Repo <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="container small">
-    © <span id="year"></span> Electro-man •
-    <a href="mailto:jayawardenago@gmail.com">jayawardenago@gmail.com</a>
+  <div class="container">
+    <div class="social-links">
+      <a href="https://github.com/AvishkaVishwa" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/avishka-vishwajith1127" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:jayawardenago@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="small">&copy; <span id="year"></span> Avishka Vishwajith. All rights reserved.</p>
+    <div class="footer-info">Designed with care for embedded and automation projects.</div>
   </div>
 </footer>
 

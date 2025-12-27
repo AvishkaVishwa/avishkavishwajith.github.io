@@ -1,31 +1,28 @@
-<!-- =========================
-FILE: blog/mqtt-grafana.html
-========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MQTT + Grafana Setup | Electro-man Blog</title>
-  <meta name="description" content="Beginner-friendly guide: MQTT to database to Grafana dashboards, topics, payloads and alerting." />
+  <title>MQTT + Grafana Setup | Avishka Vishwajith</title>
+  <meta name="description" content="Beginner-friendly guide: MQTT to database to Grafana dashboards, topics, payloads, and alerting." />
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
 
 <header class="header">
   <div class="container navbar">
-    <a class="brand" href="../index.html"><span class="dot"></span> Electro-man</a>
+    <a class="brand" href="../index.html"><span class="dot"></span> Avishka Vishwajith</a>
 
     <nav class="menu">
       <a href="../index.html">Home</a>
       <a href="../about.html">About</a>
-      <a href="../services.html">Services</a>
-      <a href="../projects.html">Projects</a>
+      <a href="../services.html">Skills</a>
+      <a href="../projects.html">Portfolio</a>
       <a href="index.html">Blog</a>
       <a href="../contact.html">Contact</a>
     </nav>
 
-    <button class="hamburger" aria-label="Open menu">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -34,8 +31,8 @@ FILE: blog/mqtt-grafana.html
     <div class="container">
       <a href="../index.html">Home</a>
       <a href="../about.html">About</a>
-      <a href="../services.html">Services</a>
-      <a href="../projects.html">Projects</a>
+      <a href="../services.html">Skills</a>
+      <a href="../projects.html">Portfolio</a>
       <a href="index.html">Blog</a>
       <a href="../contact.html">Contact</a>
     </div>
@@ -43,29 +40,28 @@ FILE: blog/mqtt-grafana.html
 </header>
 
 <main class="container">
-  <section class="hero">
-    <div class="badge">Blog Post</div>
-    <h1>MQTT + Grafana dashboard setup (beginner friendly)</h1>
-    <p>How sensor data flows: device → MQTT → database → Grafana dashboards and alerts.</p>
-    <div class="tagrow"><span class="tag">MQTT</span><span class="tag">Grafana</span><span class="tag">IoT</span></div>
+  <section class="hero section-scroll-animate">
+    <div class="badge animate-fade-in-up">Blog Post</div>
+    <h1 class="animate-fade-in-up delay-1">MQTT + Grafana dashboard setup (beginner friendly)</h1>
+    <p class="hero-desc animate-fade-in-up delay-2">How sensor data flows: device to MQTT to database to Grafana dashboards and alerts.</p>
+    <div class="tagrow animate-fade-in-up delay-3"><span class="tag">MQTT</span><span class="tag">Grafana</span><span class="tag">IoT</span></div>
   </section>
 
-  <section class="section">
-    <div class="card">
+  <section class="section section-scroll-animate">
+    <div class="card animate-fade-in-up">
       <h3>Basic flow</h3>
-      <p>
-        1) ESP32 publishes data to MQTT topics (example: <b>factory/room1/temp</b>)<br>
-        2) A bridge writes that data to a time-series database (InfluxDB, Timescale, etc.)<br>
-        3) Grafana reads the database and shows charts + alerts
-      </p>
+      <ol>
+        <li>ESP32 publishes data to MQTT topics (example: <strong>factory/room1/temp</strong>)</li>
+        <li>A bridge writes that data to a time-series database (InfluxDB, Timescale, etc.)</li>
+        <li>Grafana reads the database and shows charts and alerts</li>
+      </ol>
 
       <hr class="hr" />
 
       <h3>Good topic design</h3>
       <p>
-        Use a consistent structure:<br>
-        <b>site/device/sensor</b> → example: <b>farm/node01/humidity</b><br>
-        Keep payloads JSON if possible (easy to extend).
+        Use a consistent structure like <strong>site/device/sensor</strong>. Example: <strong>farm/node01/humidity</strong>.
+        Keep payloads JSON if possible for easy extension.
       </p>
 
       <hr class="hr" />
@@ -73,18 +69,26 @@ FILE: blog/mqtt-grafana.html
       <h3>Alerts</h3>
       <p>
         Grafana alerts work best when your data is clean and you define thresholds clearly
-        (temperature too high, humidity too low, smoke detected, etc.).
+        (temperature too high, humidity too low, smoke detected, and so on).
       </p>
     </div>
 
     <div style="margin-top:14px;">
-      <a class="btn" href="index.html">← Back to Blog</a>
+      <a class="btn" href="index.html">Back to Blog</a>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="container small">© <span id="year"></span> Electro-man</div>
+  <div class="container">
+    <div class="social-links">
+      <a href="https://github.com/AvishkaVishwa" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/avishka-vishwajith1127" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:jayawardenago@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="small">&copy; <span id="year"></span> Avishka Vishwajith. All rights reserved.</p>
+    <div class="footer-info">Designed with care for embedded and automation projects.</div>
+  </div>
 </footer>
 
 <script src="../assets/js/main.js"></script>

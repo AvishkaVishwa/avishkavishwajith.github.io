@@ -1,31 +1,28 @@
-<!-- =========================
-FILE: services.html
-========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Electro-man | Services</title>
-  <meta name="description" content="Electro-man services: PCB design, embedded firmware (ESP32/STM32), IoT dashboards and monitoring." />
+  <title>Avishka Vishwajith | Skills</title>
+  <meta name="description" content="Technical skills in microcontrollers, IoT systems, PCB design, and 3D CAD." />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
 <header class="header">
   <div class="container navbar">
-    <a class="brand" href="index.html"><span class="dot"></span> Electro-man</a>
+    <a class="brand" href="index.html"><span class="dot"></span> Avishka Vishwajith</a>
 
     <nav class="menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
+      <a href="services.html">Skills</a>
+      <a href="projects.html">Portfolio</a>
       <a href="blogs/index.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
 
-    <button class="hamburger" aria-label="Open menu">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -34,84 +31,62 @@ FILE: services.html
     <div class="container">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
+      <a href="services.html">Skills</a>
+      <a href="projects.html">Portfolio</a>
       <a href="blogs/index.html">Blog</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
 </header>
 
-<main class="container">
-  <section class="hero">
-    <div class="badge">Services</div>
-    <h1>What I can do for you</h1>
-    <p>
-      Professional help for prototypes and embedded systems. Inquiry-based for now.
-      If you have an idea, I can help design, build, and test it.
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>Services</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>PCB Design (KiCad)</h3>
-        <p>Schematic + PCB layout + Gerbers + BOM. Design review and manufacturing support.</p>
-        <div class="tagrow">
-          <span class="tag">2-layer</span>
-          <span class="tag">Power design</span>
-          <span class="tag">DRC clean</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>ESP32 / STM32 Firmware</h3>
-        <p>Sensor drivers, motor control, control loops, communication (MQTT/HTTP), clean code structure.</p>
-        <div class="tagrow">
-          <span class="tag">ESP-IDF</span>
-          <span class="tag">STM32 HAL</span>
-          <span class="tag">I2C/SPI/UART</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>IoT Dashboards</h3>
-        <p>MQTT + Grafana + InfluxDB monitoring dashboards with alerting and clean visualization.</p>
-        <div class="tagrow">
-          <span class="tag">Grafana</span>
-          <span class="tag">MQTT</span>
-          <span class="tag">Alerts</span>
-        </div>
-      </div>
+<main>
+  <section class="hero section-scroll-animate">
+    <div class="container">
+      <div class="badge animate-fade-in-up">Skills</div>
+      <h1 class="animate-fade-in-up delay-1">Technical Skills</h1>
+      <p class="hero-desc animate-fade-in-up delay-2">
+        Focused on embedded systems, IoT pipelines, PCB design, and product prototyping.
+      </p>
     </div>
   </section>
 
-  <section class="section">
-    <h2>How we start</h2>
-    <div class="grid">
-      <div class="card"><h3>1) Requirements</h3><p>What you want, inputs/outputs, constraints, budget, timeline.</p></div>
-      <div class="card"><h3>2) Proposal</h3><p>I share an approach + estimated time + what I will deliver.</p></div>
-      <div class="card"><h3>3) Build & Test</h3><p>Implementation + testing + updates based on feedback.</p></div>
-    </div>
-
-    <hr class="hr" />
-
-    <div class="card">
-      <h3>Request a quote</h3>
-      <p>Email me with: your idea, expected features, timeline, and any reference links/photos.</p>
-      <div class="actions">
-        <a class="btn primary" href="mailto:jayawardenago@gmail.com?subject=Project%20Inquiry%20-%20Electro-man">Email</a>
-        <a class="btn" href="contact.html">Contact page</a>
+  <section class="section section-scroll-animate">
+    <div class="container">
+      <div class="skills-grid">
+        <div class="skill-card animate-fade-in-up delay-1">
+          <i class="fas fa-microchip skill-icon"></i>
+          <h3>Microcontrollers</h3>
+          <p>Arduino, ESP32, STM32</p>
+        </div>
+        <div class="skill-card animate-fade-in-up delay-2">
+          <i class="fas fa-wifi skill-icon"></i>
+          <h3>IoT Systems</h3>
+          <p>Wireless protocols, cloud integration, MQTT</p>
+        </div>
+        <div class="skill-card animate-fade-in-up delay-3">
+          <i class="fas fa-drafting-compass skill-icon"></i>
+          <h3>PCB Design</h3>
+          <p>KiCad, Altium Designer</p>
+        </div>
+        <div class="skill-card animate-fade-in-up delay-4">
+          <i class="fas fa-cube skill-icon"></i>
+          <h3>3D Design</h3>
+          <p>SOLIDWORKS</p>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="container small">
-    © <span id="year"></span> Electro-man •
-    <a href="mailto:jayawardenago@gmail.com">jayawardenago@gmail.com</a>
+  <div class="container">
+    <div class="social-links">
+      <a href="https://github.com/AvishkaVishwa" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/avishka-vishwajith1127" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:jayawardenago@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="small">&copy; <span id="year"></span> Avishka Vishwajith. All rights reserved.</p>
+    <div class="footer-info">Designed with care for embedded and automation projects.</div>
   </div>
 </footer>
 

@@ -1,31 +1,28 @@
-<!-- =========================
-FILE: blog/brownout.html
-========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ESP32 Brownout Fixes | Electro-man Blog</title>
-  <meta name="description" content="Practical reasons for ESP32 brownout and how to fix it (caps, regulator, wiring, separating motor power)." />
+  <title>ESP32 Brownout Fixes | Avishka Vishwajith</title>
+  <meta name="description" content="Practical reasons for ESP32 brownout and how to fix it: capacitors, regulators, wiring, and power isolation." />
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
 
 <header class="header">
   <div class="container navbar">
-    <a class="brand" href="../index.html"><span class="dot"></span> Electro-man</a>
+    <a class="brand" href="../index.html"><span class="dot"></span> Avishka Vishwajith</a>
 
     <nav class="menu">
       <a href="../index.html">Home</a>
       <a href="../about.html">About</a>
-      <a href="../services.html">Services</a>
-      <a href="../projects.html">Projects</a>
+      <a href="../services.html">Skills</a>
+      <a href="../projects.html">Portfolio</a>
       <a href="index.html">Blog</a>
       <a href="../contact.html">Contact</a>
     </nav>
 
-    <button class="hamburger" aria-label="Open menu">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -34,8 +31,8 @@ FILE: blog/brownout.html
     <div class="container">
       <a href="../index.html">Home</a>
       <a href="../about.html">About</a>
-      <a href="../services.html">Services</a>
-      <a href="../projects.html">Projects</a>
+      <a href="../services.html">Skills</a>
+      <a href="../projects.html">Portfolio</a>
       <a href="index.html">Blog</a>
       <a href="../contact.html">Contact</a>
     </div>
@@ -43,59 +40,68 @@ FILE: blog/brownout.html
 </header>
 
 <main class="container">
-  <section class="hero">
-    <div class="badge">Blog Post</div>
-    <h1>How I fixed ESP32 brownout issues</h1>
-    <p>Brownout happens when voltage dips during Wi-Fi or motor load peaks. Here’s a practical fix list.</p>
-    <div class="tagrow"><span class="tag">ESP32</span><span class="tag">Power</span><span class="tag">Debug</span></div>
+  <section class="hero section-scroll-animate">
+    <div class="badge animate-fade-in-up">Blog Post</div>
+    <h1 class="animate-fade-in-up delay-1">How I fixed ESP32 brownout issues</h1>
+    <p class="hero-desc animate-fade-in-up delay-2">Brownout happens when voltage dips during Wi-Fi or motor load peaks. Here is a practical fix list.</p>
+    <div class="tagrow animate-fade-in-up delay-3"><span class="tag">ESP32</span><span class="tag">Power</span><span class="tag">Debug</span></div>
   </section>
 
-  <section class="section">
-    <div class="card">
+  <section class="section section-scroll-animate">
+    <div class="card animate-fade-in-up">
       <h3>What is a brownout?</h3>
       <p>
-        A brownout reset happens when the supply voltage drops below the safe level. The ESP32 detects it and resets to protect memory and stability.
+        A brownout reset happens when the supply voltage drops below the safe level. The ESP32 detects it and resets to
+        protect memory and stability.
       </p>
 
       <hr class="hr" />
 
       <h3>Common causes (real-world)</h3>
-      <p>
-        • Weak power source (USB port, cheap adapter)<br>
-        • Regulator can’t handle peak current<br>
-        • Long/thin wires → voltage drop<br>
-        • Motors causing noise + dips on the same supply<br>
-        • Bad grounding / shared return paths
-      </p>
+      <ul>
+        <li>Weak power source (USB port, cheap adapter)</li>
+        <li>Regulator cannot handle peak current</li>
+        <li>Long or thin wires cause voltage drop</li>
+        <li>Motors causing noise and dips on the same supply</li>
+        <li>Bad grounding or shared return paths</li>
+      </ul>
 
       <hr class="hr" />
 
       <h3>Quick fixes (recommended order)</h3>
-      <p>
-        1) Add bulk capacitor near ESP32 (470µF–1000µF) + 0.1µF ceramic<br>
-        2) Use a better 5V regulator with enough peak current<br>
-        3) Keep power wires short and thicker<br>
-        4) Separate motor power and logic power (common ground only)<br>
-        5) Add proper decoupling on motor driver + snubbers if needed
-      </p>
+      <ol>
+        <li>Add bulk capacitor near ESP32 (470uF to 1000uF) plus 0.1uF ceramic</li>
+        <li>Use a better 5V regulator with enough peak current</li>
+        <li>Keep power wires short and thicker</li>
+        <li>Separate motor power and logic power (common ground only)</li>
+        <li>Add proper decoupling on motor driver and snubbers if needed</li>
+      </ol>
 
       <hr class="hr" />
 
       <h3>My typical solution</h3>
       <p>
-        In my robot projects, brownout happened when Wi-Fi AP + web server started while motors were running.
-        Adding a 470µF capacitor near the ESP32-S3 and improving the power supply stability solved it.
+        In my robot projects, brownout happened when Wi-Fi AP and web server started while motors were running.
+        Adding a 470uF capacitor near the ESP32-S3 and improving the power supply stability solved it.
       </p>
     </div>
 
     <div style="margin-top:14px;">
-      <a class="btn" href="index.html">← Back to Blog</a>
+      <a class="btn" href="index.html">Back to Blog</a>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="container small">© <span id="year"></span> Electro-man</div>
+  <div class="container">
+    <div class="social-links">
+      <a href="https://github.com/AvishkaVishwa" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/avishka-vishwajith1127" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:jayawardenago@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="small">&copy; <span id="year"></span> Avishka Vishwajith. All rights reserved.</p>
+    <div class="footer-info">Designed with care for embedded and automation projects.</div>
+  </div>
 </footer>
 
 <script src="../assets/js/main.js"></script>
