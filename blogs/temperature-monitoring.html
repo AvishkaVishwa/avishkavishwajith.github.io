@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temperature Monitoring System | Avishka Vishwajith</title>
+  <meta name="description" content="ATmega328P temperature monitor with interrupt-driven timing and a 4-digit seven-segment display for real-time readings." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html"><span class="dot"></span> Avishka Vishwajith</a>
+
+    <nav class="menu">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../services.html">Skills</a>
+      <a href="../projects.html">Portfolio</a>
+      <a href="index.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu">
+    <div class="container">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../services.html">Skills</a>
+      <a href="../projects.html">Portfolio</a>
+      <a href="index.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero section-scroll-animate">
+    <div class="badge animate-fade-in-up">Project Documentation</div>
+    <h1 class="animate-fade-in-up delay-1">Temperature Monitoring System</h1>
+    <p class="hero-desc animate-fade-in-up delay-2">ATmega328P temperature monitor with interrupt-driven timing and a 4-digit seven-segment display for real-time readings.</p>
+    <div class="tagrow animate-fade-in-up delay-3"><span class="tag">ATmega328P</span><span class="tag">AVR C</span><span class="tag">7-segment</span><span class="tag">Embedded</span></div>
+  </section>
+
+  <section class="section section-scroll-animate">
+    <div class="doc-layout">
+      <div class="doc-content">
+<div class="card animate-fade-in-up delay-1">
+  <h3>Overview</h3>
+  <div class="doc-body">This project demonstrates a clean embedded design using interrupts to keep timing accurate while driving a multiplexed display.</div>
+</div>
+<div class="card animate-fade-in-up delay-2">
+  <h3>Goals</h3>
+  <div class="doc-body"><ul><li>Stable, flicker-free 7-segment display output</li><li>Consistent temperature sampling and conversion</li><li>Simple user interface for continuous monitoring</li></ul></div>
+</div>
+<div class="card animate-fade-in-up delay-3">
+  <h3>Hardware</h3>
+  <div class="doc-body"><ul><li>ATmega328P microcontroller</li><li>Analog temperature sensor</li><li>4-digit seven-segment display</li></ul></div>
+</div>
+<div class="card animate-fade-in-up delay-4">
+  <h3>Firmware</h3>
+  <div class="doc-body"><ul><li>Timer interrupts for display multiplexing</li><li>ADC sampling with simple averaging</li><li>Numeric formatting for 7-seg output</li></ul></div>
+</div>
+<div class="card animate-fade-in-up delay-4">
+  <h3>Challenges and Fixes</h3>
+  <div class="doc-body">Display flicker and noisy readings were reduced by tuning refresh rates and adding ADC averaging.</div>
+</div>
+<div class="card animate-fade-in-up delay-4">
+  <h3>Results</h3>
+  <div class="doc-body">The monitor provides a clear real-time temperature readout and a solid base for future sensor expansion.</div>
+</div>
+      </div>
+      <aside class="doc-aside">
+        <div class="doc-card">
+          <img src="../assets/img/projects/temperature-monitoring.svg" alt="Temperature Monitoring System overview image" />
+          <p class="doc-caption">Display-focused embedded monitor (replace with your real project photo).</p>
+        </div>
+        <div class="doc-card">
+          <img src="../assets/img/docs/test-setup.svg" alt="Temperature Monitoring System diagram placeholder" />
+          <p class="doc-caption">Test setup placeholder for calibration and verification.</p>
+        </div>
+        <div class="doc-card">
+          <h3>Quick Facts</h3>
+          <ul class="doc-facts"><li><strong>MCU:</strong> ATmega328P</li><li><strong>Display:</strong> 4-digit seven-segment</li><li><strong>Language:</strong> AVR C</li><li><strong>Focus:</strong> Timing and UI</li></ul>
+        </div>
+      </aside>
+    </div>
+
+    <div class="actions" style="margin-top: 20px;">
+      <a class="btn" href="index.html">Back to Blog</a>
+      <a class="btn ghost" href="https://github.com/AvishkaVishwa/Microcontroller-Design-Project-Temperature-Monitoring-System" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="social-links">
+      <a href="https://github.com/AvishkaVishwa" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/avishka-vishwajith1127" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:jayawardenago@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="small">&copy; <span id="year"></span> Avishka Vishwajith. All rights reserved.</p>
+    <div class="footer-info">Designed with the help of AI.</div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

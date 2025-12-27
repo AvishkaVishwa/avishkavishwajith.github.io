@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESP32 Powered Smart Clock | Avishka Vishwajith</title>
+  <meta name="description" content="ESP32 smart clock with SNTP sync, MAX7219 display, web configuration, and a custom power PCB." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html"><span class="dot"></span> Avishka Vishwajith</a>
+
+    <nav class="menu">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../services.html">Skills</a>
+      <a href="../projects.html">Portfolio</a>
+      <a href="index.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu">
+    <div class="container">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../services.html">Skills</a>
+      <a href="../projects.html">Portfolio</a>
+      <a href="index.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero section-scroll-animate">
+    <div class="badge animate-fade-in-up">Project Documentation</div>
+    <h1 class="animate-fade-in-up delay-1">ESP32 Powered Smart Clock</h1>
+    <p class="hero-desc animate-fade-in-up delay-2">ESP32 smart clock with SNTP sync, MAX7219 display, web configuration, and a custom power PCB.</p>
+    <div class="tagrow animate-fade-in-up delay-3"><span class="tag">ESP32</span><span class="tag">MAX7219</span><span class="tag">PCB</span><span class="tag">ESP-IDF</span></div>
+  </section>
+
+  <section class="section section-scroll-animate">
+    <div class="doc-layout">
+      <div class="doc-content">
+<div class="card animate-fade-in-up delay-1">
+  <h3>Overview</h3>
+  <div class="doc-body">A connected clock that syncs time via SNTP and offers web-based configuration for alarms and timers.</div>
+</div>
+<div class="card animate-fade-in-up delay-2">
+  <h3>Goals</h3>
+  <div class="doc-body"><ul><li>Reliable time sync over WiFi</li><li>Clean display output with MAX7219</li><li>Custom PCB for compact integration</li></ul></div>
+</div>
+<div class="card animate-fade-in-up delay-3">
+  <h3>Hardware</h3>
+  <div class="doc-body"><ul><li>ESP32 module with WiFi</li><li>MAX7219 4-digit display</li><li>Custom power chain using LM2596S and AMS1117</li></ul></div>
+</div>
+<div class="card animate-fade-in-up delay-4">
+  <h3>Firmware</h3>
+  <div class="doc-body"><ul><li>SNTP time sync and local timekeeping</li><li>Web UI for configuration</li><li>Alarm and timer scheduling</li></ul></div>
+</div>
+<div class="card animate-fade-in-up delay-4">
+  <h3>Challenges and Fixes</h3>
+  <div class="doc-body">Power stability and display refresh timing required tuning. Better decoupling and update scheduling solved flicker.</div>
+</div>
+<div class="card animate-fade-in-up delay-4">
+  <h3>Results</h3>
+  <div class="doc-body">The clock keeps accurate time and exposes settings over a simple web interface.</div>
+</div>
+      </div>
+      <aside class="doc-aside">
+        <div class="doc-card">
+          <img src="../assets/img/projects/smart-clock.svg" alt="ESP32 Powered Smart Clock overview image" />
+          <p class="doc-caption">Smart clock prototype (replace with your real build photo).</p>
+        </div>
+        <div class="doc-card">
+          <img src="../assets/img/docs/pcb-layout.svg" alt="ESP32 Powered Smart Clock diagram placeholder" />
+          <p class="doc-caption">PCB layout placeholder for the power chain and display routing.</p>
+        </div>
+        <div class="doc-card">
+          <h3>Quick Facts</h3>
+          <ul class="doc-facts"><li><strong>MCU:</strong> ESP32-WROOM-32</li><li><strong>Display:</strong> MAX7219 4-digit</li><li><strong>Power:</strong> LM2596S + AMS1117</li><li><strong>Framework:</strong> ESP-IDF</li></ul>
+        </div>
+      </aside>
+    </div>
+
+    <div class="actions" style="margin-top: 20px;">
+      <a class="btn" href="index.html">Back to Blog</a>
+      <a class="btn ghost" href="https://github.com/AvishkaVishwa/Smart_Clock" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="social-links">
+      <a href="https://github.com/AvishkaVishwa" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/avishka-vishwajith1127" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:jayawardenago@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="small">&copy; <span id="year"></span> Avishka Vishwajith. All rights reserved.</p>
+    <div class="footer-info">Designed with the help of AI.</div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -462,6 +462,60 @@ li {
   aspect-ratio: 4 / 5;
 }
 
+.doc-layout {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: start;
+  margin-top: 16px;
+}
+
+.doc-content {
+  display: grid;
+  gap: 16px;
+}
+
+.doc-aside {
+  display: grid;
+  gap: 16px;
+  position: sticky;
+  top: 110px;
+}
+
+.doc-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px;
+  box-shadow: var(--shadow);
+}
+
+.doc-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: calc(var(--radius) - 10px);
+}
+
+.doc-caption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.doc-facts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.doc-facts li {
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .skills-grid {
   display: grid;
   gap: 16px;
@@ -715,6 +769,14 @@ li {
   .about-photo-frame {
     max-width: 360px;
     margin: 0 auto;
+  }
+
+  .doc-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-aside {
+    position: static;
   }
 }
 

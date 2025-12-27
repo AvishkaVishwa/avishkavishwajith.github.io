@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step Counter with Fall Detection | Avishka Vishwajith</title>
+  <meta name="description" content="Wearable step counter and fall detection system using ESP32, MPU6050, and an OLED status display." />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html"><span class="dot"></span> Avishka Vishwajith</a>
+
+    <nav class="menu">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../services.html">Skills</a>
+      <a href="../projects.html">Portfolio</a>
+      <a href="index.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu">
+    <div class="container">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../services.html">Skills</a>
+      <a href="../projects.html">Portfolio</a>
+      <a href="index.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero section-scroll-animate">
+    <div class="badge animate-fade-in-up">Project Documentation</div>
+    <h1 class="animate-fade-in-up delay-1">Step Counter with Fall Detection</h1>
+    <p class="hero-desc animate-fade-in-up delay-2">Wearable step counter and fall detection system using ESP32, MPU6050, and an OLED status display.</p>
+    <div class="tagrow animate-fade-in-up delay-3"><span class="tag">ESP32</span><span class="tag">MPU6050</span><span class="tag">OLED</span><span class="tag">ESP-IDF</span></div>
+  </section>
+
+  <section class="section section-scroll-animate">
+    <div class="doc-layout">
+      <div class="doc-content">
+<div class="card animate-fade-in-up delay-1">
+  <h3>Overview</h3>
+  <div class="doc-body">A compact wearable system that tracks steps and detects falls using IMU data, with live status shown on an OLED.</div>
+</div>
+<div class="card animate-fade-in-up delay-2">
+  <h3>Goals</h3>
+  <div class="doc-body"><ul><li>Reliable step counting with simple signal processing</li><li>Basic fall detection using thresholds and timing</li><li>Clear on-device feedback via OLED</li></ul></div>
+</div>
+<div class="card animate-fade-in-up delay-3">
+  <h3>Hardware</h3>
+  <div class="doc-body"><ul><li>ESP32 microcontroller</li><li>MPU6050 accelerometer and gyro</li><li>OLED display and battery power</li></ul></div>
+</div>
+<div class="card animate-fade-in-up delay-4">
+  <h3>Firmware</h3>
+  <div class="doc-body"><ul><li>IMU sampling and filtering</li><li>Step detection using acceleration magnitude</li><li>Fall detection based on impact thresholds and recovery time</li></ul></div>
+</div>
+<div class="card animate-fade-in-up delay-4">
+  <h3>Challenges and Fixes</h3>
+  <div class="doc-body">Motion noise required filtering and careful threshold tuning. Iterative testing improved the balance between sensitivity and false positives.</div>
+</div>
+<div class="card animate-fade-in-up delay-4">
+  <h3>Results</h3>
+  <div class="doc-body">The device detects daily walking steps and flags heavy impacts for fall review. The logic can be refined further with more data.</div>
+</div>
+      </div>
+      <aside class="doc-aside">
+        <div class="doc-card">
+          <img src="../assets/img/projects/step-counter.svg" alt="Step Counter with Fall Detection overview image" />
+          <p class="doc-caption">Wearable motion sensing build (replace with your real project photo).</p>
+        </div>
+        <div class="doc-card">
+          <img src="../assets/img/docs/system-diagram.svg" alt="Step Counter with Fall Detection diagram placeholder" />
+          <p class="doc-caption">Sensor processing flow placeholder.</p>
+        </div>
+        <div class="doc-card">
+          <h3>Quick Facts</h3>
+          <ul class="doc-facts"><li><strong>MCU:</strong> ESP32</li><li><strong>Sensor:</strong> MPU6050 IMU</li><li><strong>Display:</strong> OLED</li><li><strong>Framework:</strong> ESP-IDF</li></ul>
+        </div>
+      </aside>
+    </div>
+
+    <div class="actions" style="margin-top: 20px;">
+      <a class="btn" href="index.html">Back to Blog</a>
+      <a class="btn ghost" href="https://github.com/AvishkaVishwa/ESP32-MPU6050-Step-Counter-Fall-Detection-System" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="social-links">
+      <a href="https://github.com/AvishkaVishwa" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/avishka-vishwajith1127" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:jayawardenago@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="small">&copy; <span id="year"></span> Avishka Vishwajith. All rights reserved.</p>
+    <div class="footer-info">Designed with the help of AI.</div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
