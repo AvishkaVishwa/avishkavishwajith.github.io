@@ -8,7 +8,7 @@
   --line: #e6edf5;
   --text: #0f172a;
   --muted: #55637a;
-  --accent: #14b8a6;
+  --accent: #11211f;
   --accent-2: #0ea5e9;
   --accent-3: #7dd3fc;
   --radius: 18px;
@@ -317,6 +317,17 @@ li {
   border: 1px solid rgba(20, 184, 166, 0.18);
   border-radius: calc(var(--radius) - 8px);
   pointer-events: none;
+}
+
+.hero-card--video {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.hero-card--video::after {
+  content: none;
 }
 
 .hero-card img {
