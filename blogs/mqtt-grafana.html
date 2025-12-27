@@ -1,0 +1,92 @@
+<!-- =========================
+FILE: blog/mqtt-grafana.html
+========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MQTT + Grafana Setup | Electro-man Blog</title>
+  <meta name="description" content="Beginner-friendly guide: MQTT to database to Grafana dashboards, topics, payloads and alerting." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container navbar">
+    <a class="brand" href="/index.html"><span class="dot"></span> Electro-man</a>
+
+    <nav class="menu">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu">
+    <div class="container">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="badge">Blog Post</div>
+    <h1>MQTT + Grafana dashboard setup (beginner friendly)</h1>
+    <p>How sensor data flows: device → MQTT → database → Grafana dashboards and alerts.</p>
+    <div class="tagrow"><span class="tag">MQTT</span><span class="tag">Grafana</span><span class="tag">IoT</span></div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h3>Basic flow</h3>
+      <p>
+        1) ESP32 publishes data to MQTT topics (example: <b>factory/room1/temp</b>)<br>
+        2) A bridge writes that data to a time-series database (InfluxDB, Timescale, etc.)<br>
+        3) Grafana reads the database and shows charts + alerts
+      </p>
+
+      <hr class="hr" />
+
+      <h3>Good topic design</h3>
+      <p>
+        Use a consistent structure:<br>
+        <b>site/device/sensor</b> → example: <b>farm/node01/humidity</b><br>
+        Keep payloads JSON if possible (easy to extend).
+      </p>
+
+      <hr class="hr" />
+
+      <h3>Alerts</h3>
+      <p>
+        Grafana alerts work best when your data is clean and you define thresholds clearly
+        (temperature too high, humidity too low, smoke detected, etc.).
+      </p>
+    </div>
+
+    <div style="margin-top:14px;">
+      <a class="btn" href="/blog/">← Back to Blog</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container small">© <span id="year"></span> Electro-man</div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!-- =========================
+FILE: blog/brownout.html
+========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESP32 Brownout Fixes | Electro-man Blog</title>
+  <meta name="description" content="Practical reasons for ESP32 brownout and how to fix it (caps, regulator, wiring, separating motor power)." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container navbar">
+    <a class="brand" href="/index.html"><span class="dot"></span> Electro-man</a>
+
+    <nav class="menu">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu">
+    <div class="container">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="badge">Blog Post</div>
+    <h1>How I fixed ESP32 brownout issues</h1>
+    <p>Brownout happens when voltage dips during Wi-Fi or motor load peaks. Here’s a practical fix list.</p>
+    <div class="tagrow"><span class="tag">ESP32</span><span class="tag">Power</span><span class="tag">Debug</span></div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h3>What is a brownout?</h3>
+      <p>
+        A brownout reset happens when the supply voltage drops below the safe level. The ESP32 detects it and resets to protect memory and stability.
+      </p>
+
+      <hr class="hr" />
+
+      <h3>Common causes (real-world)</h3>
+      <p>
+        • Weak power source (USB port, cheap adapter)<br>
+        • Regulator can’t handle peak current<br>
+        • Long/thin wires → voltage drop<br>
+        • Motors causing noise + dips on the same supply<br>
+        • Bad grounding / shared return paths
+      </p>
+
+      <hr class="hr" />
+
+      <h3>Quick fixes (recommended order)</h3>
+      <p>
+        1) Add bulk capacitor near ESP32 (470µF–1000µF) + 0.1µF ceramic<br>
+        2) Use a better 5V regulator with enough peak current<br>
+        3) Keep power wires short and thicker<br>
+        4) Separate motor power and logic power (common ground only)<br>
+        5) Add proper decoupling on motor driver + snubbers if needed
+      </p>
+
+      <hr class="hr" />
+
+      <h3>My typical solution</h3>
+      <p>
+        In my robot projects, brownout happened when Wi-Fi AP + web server started while motors were running.
+        Adding a 470µF capacitor near the ESP32-S3 and improving the power supply stability solved it.
+      </p>
+    </div>
+
+    <div style="margin-top:14px;">
+      <a class="btn" href="/blog/">← Back to Blog</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container small">© <span id="year"></span> Electro-man</div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

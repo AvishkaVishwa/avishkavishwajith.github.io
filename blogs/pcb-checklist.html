@@ -1,0 +1,90 @@
+<!-- =========================
+FILE: blog/pcb-checklist.html
+========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PCB Checklist | Electro-man Blog</title>
+  <meta name="description" content="PCB design checklist before manufacturing: DRC, footprints, power, grounding, silkscreen and test points." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container navbar">
+    <a class="brand" href="/index.html"><span class="dot"></span> Electro-man</a>
+
+    <nav class="menu">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu">
+    <div class="container">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="badge">Blog Post</div>
+    <h1>PCB Design checklist before manufacturing</h1>
+    <p>A simple checklist to avoid common PCB mistakes.</p>
+    <div class="tagrow"><span class="tag">KiCad</span><span class="tag">PCB</span><span class="tag">Manufacturing</span></div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h3>Checklist</h3>
+      <p>
+        1) Run DRC (no errors / clearance ok)<br>
+        2) Verify footprints (pin order, polarity, dimensions)<br>
+        3) Check power rails (5V/3V3, current paths, thickness)<br>
+        4) Place decoupling capacitors close to IC pins<br>
+        5) Grounding: clean return paths, avoid long loops<br>
+        6) Silkscreen: labels, polarity marks, pin-1 markers<br>
+        7) Add test points for key rails and signals<br>
+        8) Check connectors orientation and mechanical spacing<br>
+        9) Export gerbers and verify in a viewer<br>
+        10) BOM + assembly notes (if PCBA)
+      </p>
+
+      <hr class="hr" />
+
+      <h3>My rule</h3>
+      <p>
+        Always verify footprints using the datasheet + 3D view.
+        Most PCB issues come from a wrong footprint or swapped pins.
+      </p>
+    </div>
+
+    <div style="margin-top:14px;">
+      <a class="btn" href="/blog/">← Back to Blog</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container small">© <span id="year"></span> Electro-man</div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

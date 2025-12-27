@@ -1,0 +1,112 @@
+<!-- =========================
+FILE: projects.html
+========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electro-man | Projects</title>
+  <meta name="description" content="Projects by Electro-man: embedded systems, PCB designs, IoT dashboards, and robotics builds." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container navbar">
+    <a class="brand" href="/index.html"><span class="dot"></span> Electro-man</a>
+
+    <nav class="menu">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu">
+    <div class="container">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="badge">Projects</div>
+    <h1>Selected work</h1>
+    <p>Some of my embedded systems, PCB, IoT, and robotics projects.</p>
+  </section>
+
+  <section class="section">
+    <h2>Featured Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>ESP32 Smart Clock</h3>
+        <p>Web-configurable alarms/timers + SNTP sync + MAX7219 display + custom PCB power chain.</p>
+        <div class="tagrow"><span class="tag">ESP-IDF</span><span class="tag">KiCad</span><span class="tag">MAX7219</span></div>
+        <p class="small" style="margin-top:10px;">
+          <a href="https://github.com/AvishkaVishwa/Smart_Clock" target="_blank" rel="noopener">GitHub →</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Sumo Robot (Competition)</h3>
+        <p>Autonomous pushing robot using ESP32 + TB6612FNG motor driver.</p>
+        <div class="tagrow"><span class="tag">Robotics</span><span class="tag">Motor Control</span><span class="tag">ESP32</span></div>
+        <p class="small" style="margin-top:10px;">
+          <a href="https://github.com/AvishkaVishwa/Robot-Competetion-Sumo-Robot-method" target="_blank" rel="noopener">GitHub →</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Greenhouse Monitoring</h3>
+        <p>ESP8266 + sensors + Blynk monitoring for greenhouse environment.</p>
+        <div class="tagrow"><span class="tag">IoT</span><span class="tag">Sensors</span><span class="tag">ESP8266</span></div>
+        <p class="small" style="margin-top:10px;">
+          <a href="https://github.com/AvishkaVishwa/Green-House-Monitoring-System" target="_blank" rel="noopener">GitHub →</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>12V DC Motor Speed Controller PCB</h3>
+        <p>NE555 PWM speed control circuit with custom PCB layout.</p>
+        <div class="tagrow"><span class="tag">NE555</span><span class="tag">PCB</span><span class="tag">Power</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Data Acquisition System</h3>
+        <p>DAQ with multiple sensors and visualization workflow.</p>
+        <div class="tagrow"><span class="tag">Sensors</span><span class="tag">DAQ</span><span class="tag">Visualization</span></div>
+      </div>
+
+      <div class="card">
+        <h3>ESP32 Automation Board</h3>
+        <p>Industrial-style controller with opto inputs and SSR outputs.</p>
+        <div class="tagrow"><span class="tag">IIoT</span><span class="tag">Isolation</span><span class="tag">ESP32</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container small">
+    © <span id="year"></span> Electro-man •
+    <a href="mailto:jayawardenago@gmail.com">jayawardenago@gmail.com</a>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

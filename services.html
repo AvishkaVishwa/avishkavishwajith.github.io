@@ -1,0 +1,120 @@
+<!-- =========================
+FILE: services.html
+========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electro-man | Services</title>
+  <meta name="description" content="Electro-man services: PCB design, embedded firmware (ESP32/STM32), IoT dashboards and monitoring." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container navbar">
+    <a class="brand" href="/index.html"><span class="dot"></span> Electro-man</a>
+
+    <nav class="menu">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu">
+    <div class="container">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="badge">Services</div>
+    <h1>What I can do for you</h1>
+    <p>
+      Professional help for prototypes and embedded systems. Inquiry-based for now.
+      If you have an idea, I can help design, build, and test it.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>PCB Design (KiCad)</h3>
+        <p>Schematic + PCB layout + Gerbers + BOM. Design review and manufacturing support.</p>
+        <div class="tagrow">
+          <span class="tag">2-layer</span>
+          <span class="tag">Power design</span>
+          <span class="tag">DRC clean</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ESP32 / STM32 Firmware</h3>
+        <p>Sensor drivers, motor control, control loops, communication (MQTT/HTTP), clean code structure.</p>
+        <div class="tagrow">
+          <span class="tag">ESP-IDF</span>
+          <span class="tag">STM32 HAL</span>
+          <span class="tag">I2C/SPI/UART</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>IoT Dashboards</h3>
+        <p>MQTT + Grafana + InfluxDB monitoring dashboards with alerting and clean visualization.</p>
+        <div class="tagrow">
+          <span class="tag">Grafana</span>
+          <span class="tag">MQTT</span>
+          <span class="tag">Alerts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>How we start</h2>
+    <div class="grid">
+      <div class="card"><h3>1) Requirements</h3><p>What you want, inputs/outputs, constraints, budget, timeline.</p></div>
+      <div class="card"><h3>2) Proposal</h3><p>I share an approach + estimated time + what I will deliver.</p></div>
+      <div class="card"><h3>3) Build & Test</h3><p>Implementation + testing + updates based on feedback.</p></div>
+    </div>
+
+    <hr class="hr" />
+
+    <div class="card">
+      <h3>Request a quote</h3>
+      <p>Email me with: your idea, expected features, timeline, and any reference links/photos.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:jayawardenago@gmail.com?subject=Project%20Inquiry%20-%20Electro-man">Email</a>
+        <a class="btn" href="/contact.html">Contact page</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container small">
+    © <span id="year"></span> Electro-man •
+    <a href="mailto:jayawardenago@gmail.com">jayawardenago@gmail.com</a>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
