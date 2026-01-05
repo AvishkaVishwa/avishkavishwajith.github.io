@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ESP32 Brownout Fixes | Avishka Vishwajith</title>
-  <meta name="description" content="Practical reasons for ESP32 brownout and how to fix it: capacitors, regulators, wiring, and power isolation." />
+  <title>How to Fix Brownout Issues | Avishka Vishwajith</title>
+  <meta name="description" content="Diagnose and fix brownout resets in embedded projects with practical power, wiring, and firmware steps." />
   <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
@@ -41,49 +41,79 @@
 
 <main class="container">
   <section class="hero section-scroll-animate">
-    <div class="badge animate-fade-in-up">Blog Post</div>
-    <h1 class="animate-fade-in-up delay-1">How I fixed ESP32 brownout issues</h1>
-    <p class="hero-desc animate-fade-in-up delay-2">Brownout happens when voltage dips during Wi-Fi or motor load peaks. Here is a practical fix list.</p>
-    <div class="tagrow animate-fade-in-up delay-3"><span class="tag">ESP32</span><span class="tag">Power</span><span class="tag">Debug</span></div>
+    <div class="badge animate-fade-in-up">Tutorial</div>
+    <h1 class="animate-fade-in-up delay-1">How to Fix Brownout Issues</h1>
+    <p class="hero-desc animate-fade-in-up delay-2">Why microcontrollers reset under load and the practical fixes that stop it.</p>
+    <div class="tagrow animate-fade-in-up delay-3"><span class="tag">Power</span><span class="tag">Brownout</span><span class="tag">Debug</span><span class="tag">MCU</span></div>
   </section>
 
   <section class="section section-scroll-animate">
     <div class="card animate-fade-in-up">
       <h3>What is a brownout?</h3>
-      <p>
-        A brownout reset happens when the supply voltage drops below the safe level. The ESP32 detects it and resets to
-        protect memory and stability.
-      </p>
+      <div class="doc-body">
+        A brownout happens when supply voltage dips below the MCU’s safe level. The brownout detector resets the MCU to avoid corrupted execution.
+      </div>
 
       <hr class="hr" />
 
-      <h3>Common causes (real-world)</h3>
+      <h3>How brownouts show up</h3>
       <ul>
-        <li>Weak power source (USB port, cheap adapter)</li>
-        <li>Regulator cannot handle peak current</li>
-        <li>Long or thin wires cause voltage drop</li>
-        <li>Motors causing noise and dips on the same supply</li>
-        <li>Bad grounding or shared return paths</li>
+        <li>Resets when motors/servos start or Wi‑Fi transmits</li>
+        <li>Relays energize → MCU reboots</li>
+        <li>I2C devices vanish or serial output gets corrupted</li>
+        <li>Boot loops on weak USB/battery power</li>
       </ul>
 
       <hr class="hr" />
 
-      <h3>Quick fixes (recommended order)</h3>
+      <h3>Why they happen</h3>
+      <ul>
+        <li>Sudden current spikes (motors, servos, RF bursts)</li>
+        <li>Regulator can’t handle transients or dropout</li>
+        <li>Poor decoupling or long/high‑impedance wiring</li>
+        <li>Noisy loads sharing the MCU rail</li>
+        <li>Weak cables/contacts causing voltage drop</li>
+      </ul>
+
+      <hr class="hr" />
+
+      <h3>How to confirm</h3>
+      <ul>
+        <li>Check reset reason flags (e.g., ESP32 reset reason)</li>
+        <li>Scope VDD at the MCU during the event (multimeters miss fast dips)</li>
+      </ul>
+
+      <hr class="hr" />
+
+      <h3>Fixes that work</h3>
       <ol>
-        <li>Add bulk capacitor near ESP32 (470uF to 1000uF) plus 0.1uF ceramic</li>
-        <li>Use a better 5V regulator with enough peak current</li>
-        <li>Keep power wires short and thicker</li>
-        <li>Separate motor power and logic power (common ground only)</li>
-        <li>Add proper decoupling on motor driver and snubbers if needed</li>
+        <li><strong>Decoupling:</strong> 100 nF at every VDD pin; 1–10 µF nearby.</li>
+        <li><strong>Bulk caps for spikes:</strong> 100–470 µF near motors/relays; 10–47 µF near MCU rail.</li>
+        <li><strong>Separate rails:</strong> Motor/servo supply isolated from MCU rail; common ground plane/star point.</li>
+        <li><strong>Better regulator:</strong> Adequate current, low dropout, correct caps, good transient response.</li>
+        <li><strong>Wiring:</strong> Short, thick cables; avoid breadboards for high current; good connectors.</li>
+        <li><strong>Firmware staging:</strong> Ramp PWM, don’t power everything at once, delay RF transmit until stable.</li>
+        <li><strong>BOD configuration:</strong> Keep brownout detection on; adjust threshold only if power is proven solid.</li>
       </ol>
 
       <hr class="hr" />
 
-      <h3>My typical solution</h3>
-      <p>
-        In my robot projects, brownout happened when Wi-Fi AP and web server started while motors were running.
-        Adding a 470uF capacitor near the ESP32-S3 and improving the power supply stability solved it.
-      </p>
+      <h3>Quick checklist</h3>
+      <ul>
+        <li>Do motors/relays/Wi‑Fi trigger resets?</li>
+        <li>Is the regulator sized for peak and transient load?</li>
+        <li>100 nF at each VDD, bulk caps near load and MCU?</li>
+        <li>Are noisy loads on a separate rail from the MCU?</li>
+        <li>Is wiring/cable resistance causing a dip?</li>
+        <li>Can you see the VDD dip on a scope?</li>
+      </ul>
+
+      <hr class="hr" />
+
+      <h3>Need specifics?</h3>
+      <div class="doc-body">
+        Tell me your MCU (ESP32, STM32, AVR, RP2040, etc.) and loads (motors, relays, Wi‑Fi). I’ll propose a power tree, capacitor values, and wiring/layout tips tailored to it.
+      </div>
     </div>
 
     <div style="margin-top:14px;">
